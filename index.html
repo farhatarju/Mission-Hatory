@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+  <body>
+  
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1f0b4f;">
+  <div class="container-fluid ms-auto gap-5">
+    <a class="navbar-brand">বাংলাদেশ জাতীয় তথ্য বাতায়ন</a>
+    
+
+  
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Form inside Navbar -->
+        <form class="d-flex align-items-center gap-2">
+          <!-- Division Select -->
+          <select class="form-select form-select-sm">
+            <option selected>বিভাগ</option>
+            <option value="doptor">দপ্তর অফিসসমূহ</option>
+            <option value="bivag">বিভাগ পর্যায়ের সরকারি অফিস</option>
+            <option value="jela">জেলা পর্যায়ের সরকারি অফিস</option>
+            <option value="ancholik">দপ্তর অফিসসমূহ</option>
+          </select>
+
+           <!-- Division Select -->
+          <select class="form-select form-select-sm">
+            <option selected>রাজশাহী বিভাগ</option>
+            <option value="#">সিলেট বিভাগ</option>
+            <option value="#">ঢাকা বিভাগ</option>
+            <option value="#">চট্টগ্রাম বিভাগ</option>
+            <option value="#">রংপুর বিভাগ</option>
+            <option value="#">খুলনা বিভাগ</option>
+            <option value="#">বরিশাল বিভাগ</option>
+            <option value="#">ময়মনসিংহ বিভাগ</option>
+
+
+            
+
+          </select>
+
+          <!-- District Select -->
+          <select class="form-select form-select-sm">
+            <option selected> রাজশাহী জেলা</option>
+            <option value="#">পাবনা জেলা </option>
+            <option value="#">নাটোর জেলা</option>
+            <option value="#">নওগাঁ জেলা</option>
+            <option value="#">বগুড়া জেলা</option>
+            <option value="#">সিরাজগঞ্জ জেলা</option>
+            <option value="#">চাপাইনবাবগঞ্জ জেলা</option>
+            <option value="#">জয়পুরহাট জেলা</option>
+
+
+          </select>
+
+          <!-- Upazila Select -->
+          <select class="form-select form-select-sm">
+            <option selected> পবা উপজেলা</option>
+            <option  value="#"> দুরগাপুর উপজেলা</option>
+            <option value="#"> মোহনপুর উপজেলা</option>
+             <option  value="#"> চারঘাট উপজেলা</option>
+            <option value="#">পুঠিয়া উপজেলা</option>
+            <option value="#">বাঘা উপজেলা</option>
+            <option value="#">গোদাগাড়ী উপজেলা</option>
+            <option value="#"> বাগমারা উপজেলা</option>
+            <option value="#"> তানোর উপজেলা</option>
+
+           
+
+          </select>
+
+          <!-- lang select -->
+          <select class="form-select form-select-sm" style="text-align: right;">
+            <option selected>Bangla</option>
+            <option value="doptor">English</option>
+            </select>
+
+         
+      
+      </ul>
+    </div>
+
+    </div>
+</nav>
+
+ <!-- Footer start -->
+
+
+    <footer class="bg-secondary-subtle text-dark p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <!-- বাম পাশের লেখা -->
+        <p style="text-align: left;">সাইটটি শেষ হাল-নাগাদ করা হয়েছেঃ <span id="last-update"></span></p>
+        <script>
+  // ইংরেজি সংখ্যাকে বাংলায় রূপান্তর করার ফাংশন
+  function toBanglaNumber(num) {
+    const banglaDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+    return num.toString().replace(/[0-9]/g, d => banglaDigits[d]);
+  }
+
+  function updateDateTime() {
+    const now = new Date();
+
+    const year = toBanglaNumber(now.getFullYear());
+    const month = toBanglaNumber(String(now.getMonth() + 1).padStart(2, '0'));
+    const day = toBanglaNumber(String(now.getDate()).padStart(2, '0'));
+
+    const hours = toBanglaNumber(String(now.getHours()).padStart(2, '0'));
+    const minutes = toBanglaNumber(String(now.getMinutes()).padStart(2, '0'));
+    const seconds = toBanglaNumber(String(now.getSeconds()).padStart(2, '0'));
+
+    const formattedDate = `${day}-${month}-${year}`;
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+    document.getElementById("last-update").textContent = formattedDate + " " + formattedTime;
+  }
+
+  // প্রথমবার চালু হবে
+  updateDateTime();
+  // প্রতি সেকেন্ডে নতুন সময় বসবে
+  setInterval(updateDateTime, 1000);
+</script>
+      </div>
+
+      
+      <div class="col-6 text-end">
+        <!-- ডান পাশে দুই লাইন -->
+        <p>পরিকল্পনা ও বাস্তবায়নেঃমন্ত্রিপরিষদ   বিভাগ,    এটুআই,    বিসিসি,    ডিওআইসিটি    ও     বেসিস</p>
+        <p>কারিগরি সহায়তায়ঃ<img src="LOGO.png"  style="width:20; height:20; margin-left:5px;"></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer end -->
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
